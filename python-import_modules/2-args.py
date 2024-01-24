@@ -5,7 +5,7 @@ args_len = len(num_args) - 1
 
 print("{}".format(args_len), end=" ")
 if args_len == 0:
-    print("arguments:")
+    print("arguments.")
 elif args_len == 1:
     print("argument:")
 else:
