@@ -1,4 +1,4 @@
-*Python - Data Structures: Lists, Tuples
+# Python - Data Structures: Lists, Tuples
 
 - What are lists and how to use them
 - What are the differences and similarities between strings and lists
