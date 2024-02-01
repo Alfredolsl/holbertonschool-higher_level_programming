@@ -1,12 +1,7 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
-    if len(my_list_1) > len(my_list_2):
-        list_len = len(my_list_1)
-    else:
-        list_len = len(my_list_2)
-
     res_list = []
-    for i in range(list_len):
+    for i in range(list_length):
         try:
             res = my_list_1[i] / my_list_2[i]
         except TypeError:
