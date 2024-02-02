@@ -3,9 +3,7 @@
 
 
 class Square:
-    """
-    a square class
-    """
+    """a square class"""
 
 
     def __init__(self, size):
