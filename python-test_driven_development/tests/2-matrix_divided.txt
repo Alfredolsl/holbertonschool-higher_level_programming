@@ -75,8 +75,7 @@ If a list is used as ``matrix`` arg, a TypeError is raised.
 
         >>> matrix = [[]]
         >>> print(matrix_divided(matrix, 3))
-	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	[[]]
 
 ...but an empty list of lists will succeed.
 ::
@@ -91,6 +90,17 @@ If a list is used as ``matrix`` arg, a TypeError is raised.
 
 All the rows in ``matrix`` must be the same size.
 If any rows differ from size, a TypeError is raised.
+::
+
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, "not a number", 6]
+	...	]
+        >>> print(matrix_divided(matrix, 3))
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
 
 
 Invalid Divisors
