@@ -1,0 +1,91 @@
+The ``add_integer`` module
+--------------------------
+
+This module defines an integer addition function given two integers.
+
+Usage
+-----
+
+```add_integer(...)``` returns the addition of its two arguments. For numbers, that value is equivalent to using the ``+`` operator.
+
+::
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+	>>> add_integer(2, 3)
+	5
+
+::
+
+	>>> add_integer(1, -2)
+	-1
+
+::
+
+	>>> add_integer(2.0, 3.0)
+	5
+
+Floats are casted into ints before addition is performed.
+
+::
+
+	>>> add_integer(2.3, -3)
+	-1
+
+::
+
+	>>> add_integer(2.9, 0.2)
+	2
+
+Note that when a float is turned into an integer, it removes the floating numbers.
+::
+
+	>>> add_integer(-2.9, -0.2)
+	-2
+
+::
+
+	>>> add_integer(2)
+	100
+
+The second arg is optional, by default, it is 98.
+
+
+Non-numbers
+-----------
+
+``add_integers()`` expects bot args to be either int or float.
+If it's not an integer or a float, a TypeError is raised.
+
+::
+
+	>>> add_integer("holbertastico", 3)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer("buenas", "holbertardes")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer(2, float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+Note the function fails if infinity is provided as input.
+::
+
+	>>> add_integer(float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
+Fails again with NaN numbers.
+::
