@@ -3,11 +3,12 @@
 
 
 def text_indentation(text):
-    """prints a text with 2 new lines after each of these characters: '.', '?', and ':'.
+    """prints a text with 2 new lines
+    after each of these characters: '.', '?', and ':'.
 
     Args:
         text (str): text to iterate and separate.
-    
+
     Raises:
         TypeError: If text is not a string.
     """
@@ -26,12 +27,3 @@ def text_indentation(text):
                 c += 1
             continue
         c += 1
-
-#    for char in text:
-#        if char == "":
-#            pass
-#        else:
-#            print(char, end="")
-#
-#        if char in ".?:":
-#            print("\n")        
