@@ -18,14 +18,12 @@ If there wasn't an input specified for `last_name`, it defaults to "".
 
 ::
 
-	>>> say_my_name = __import__('3-say_my_name').say_my_name
 	>>> say_my_name("Guido")
 	My name is Guido 
 
 Notice the space after 'Guido', this happens if a last name was not specified.
 ::
 
-	>>> say_my_name = __import__('3-say_my_name').say_my_name
 	>>> say_my_name("1", "2")
 	My name is 1 2
 
@@ -36,10 +34,32 @@ Invalid inputs:
 
 ::
 
-	>>> say_my_name = __import__('3-say_my_name').say_my_name
 	>>> say_my_name(1, 2)
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
 The module doesn't accept any other inputs other than strings.
 ::
+
+	>>> say_my_name(42, "Dogg")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+Combining string and any type other than another string results in TypeError.
+::
+
+	>>> say_my_name("Alfredo", 20)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+::
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Not typing in anything results in TypeError
+::
+
+	>>> say_my_name("   Walter   ", "   White   ")
+	My name is    Walter       White   
