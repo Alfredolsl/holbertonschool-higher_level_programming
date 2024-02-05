@@ -1,0 +1,71 @@
+```text_indentation```
+----------------------
+
+The ```text_indentation(text)``` prints text input with 2 new lines if '.' or '?' or ':' is encountered.
+
+Usage
+-----
+
+```text_indentation(text)``` requires a string to function properly.
+
+::
+
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+	>>> text_indentation("A sentence. Another sentence? Another sentence:")
+	A sentence.
+	<BLANKLINE>
+	Another sentence?
+	<BLANKLINE>
+	Another sentence:
+	<BLANKLINE>
+
+::
+
+	>>> text_indentation("A")
+	A
+
+::
+
+	>>> text_indentation(".?:")
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+
+::
+
+Incorrect usage
+---------------
+
+	>>> text_indentation(1)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+::
+
+	>>> text_indentation(True)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+::
+
+	>>> text_indentation(0)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+::
+
+	>>> text_indentation(3.14)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+::
+
+
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+::
