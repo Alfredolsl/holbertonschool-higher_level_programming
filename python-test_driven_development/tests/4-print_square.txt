@@ -86,3 +86,12 @@ A float is not accepted, thus raises TypeError.
 	TypeError: size must be an integer
 
 ::
+
+	>>> print_square(None)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+	>>> print_square(0.0)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
