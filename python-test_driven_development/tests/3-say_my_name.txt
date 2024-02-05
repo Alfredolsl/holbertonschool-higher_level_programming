@@ -1,0 +1,45 @@
+```say_my_name```
+you're goddamn right
+-----------------
+
+This module prints 'My name is ', followed by the first input `first_name` and second input `last_name`.
+
+Usage
+-----
+
+```say_my_name(first_name, last_name="")``` prints 'My name is ', followed by `first_name`, following a space, then `last_name`.
+If there wasn't an input specified for `last_name`, it defaults to "".
+
+::
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("Ryan", "Gosling")
+	My name is Ryan Gosling
+
+::
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("Guido")
+	My name is Guido 
+
+Notice the space after 'Guido', this happens if a last name was not specified.
+::
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("1", "2")
+	My name is 1 2
+
+As long as the input type is a string, there's no Error raise.
+::
+
+Invalid inputs:
+
+::
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name(1, 2)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+The module doesn't accept any other inputs other than strings.
+::
