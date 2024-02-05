@@ -16,7 +16,7 @@ def print_square(size):
         raise TypeError("size must be an integer")
     elif size < 0:
         raise ValueError("size must be >= 0")
-    elif size == True and not size == 1:
+    elif size == True and size == 1:
         raise TypeError("size must be an integer")
 
     for i in range(0, size):
