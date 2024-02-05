@@ -1,0 +1,88 @@
+```print_square```
+------------------
+
+Module that prints a square character with the character '#'.
+
+Usage
+-----
+
+```print_square``` prints the square area of a square given by the input `size`.
+::
+Notice 0 was given as the `size` input.
+
+	>>> print_square = __import__('4-print_square').print_square
+	>>> print_square(0)
+	
+::
+
+	>>> print_square(3)
+	###
+	###
+	###
+
+::
+
+	>>> print_square(6)
+	######
+	######
+	######
+	######
+	######
+	######
+
+::
+
+	>>> print_square(10)
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+
+Invalid inputs:
+---------------
+
+::
+When giving any other type other than int, a TypeError is raised.
+
+	>>> print_square("hi")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+A float is not accepted, thus raises TypeError.
+
+	>>> print_square(2.9)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+
+	>>> print_square(-3)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+::
+
+	>>> print_square(True)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+
+	>>> print_square(-2.5)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+
+	>>> print_square(2 + 3j)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
