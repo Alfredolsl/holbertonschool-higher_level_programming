@@ -4,7 +4,4 @@
 
 class Rectangle:
     """represents a rectangle"""
-
-    def __init__(self):
-        """initializes a rectangle"""
-        pass
+    pass
