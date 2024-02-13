@@ -90,9 +90,9 @@ class Rectangle:
             a Rectangle.
         """
         if rect_1.__class__.__name__ != "Rectangle":
-            raise TypeError("rect_1 must be a Rectangle")
+            raise TypeError("rect_1 must be an instance of Rectangle")
         if rect_2.__class__.__name__ != "Rectangle":
-            raise TypeError("rect_2 must be a Rectangle")
+            raise TypeError("rect_2 must be an instance of Rectangle")
 
         if rect_1.area() >= rect_2.area():
             return rect_1
