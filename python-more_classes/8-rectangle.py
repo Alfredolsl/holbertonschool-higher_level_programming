@@ -86,9 +86,9 @@ class Rectangle:
             rect_1 (int): Rectangle 1
             rect_2 (int): Rectangle 2
         """
-        if rect_1.__class__.__name__ != "Rectangle":
+        if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be a rectangle")
-        if rect_2.__class__.__name__ != "Rectangle":
+        if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be a rectangle")
 
         if rect_1.area() >= rect_2.area():
