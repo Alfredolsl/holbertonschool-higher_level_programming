@@ -88,7 +88,7 @@ class Rectangle:
         """
         if rect1.__class__.__name__ != "Rectangle":
             raise TypeError("rect_1 must be a rectangle")
-        elif rect2.__class__.__name__ != "Rectangle":
+        if rect2.__class__.__name__ != "Rectangle":
             raise TypeError("rect_2 must be a rectangle")
 
         if rect1.area() >= rect2.area():
