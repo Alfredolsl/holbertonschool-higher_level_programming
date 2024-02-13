@@ -78,20 +78,20 @@ class Rectangle:
         type(self).number_of_instances -= 1
 
     @staticmethod
-    def bigger_or_equal(rect1, rect2):
+    def bigger_or_equal(rect_1, rect_2):
         """Returns the biggest rectangle
         based on the area.
 
         Args:
-            rect1 (int): Rectangle 1
-            rect2 (int): Rectangle 2
+            rect_1 (int): Rectangle 1
+            rect_2 (int): Rectangle 2
         """
-        if rect1.__class__.__name__ != "Rectangle":
+        if rect_1.__class__.__name__ != "Rectangle":
             raise TypeError("rect_1 must be a rectangle")
-        if rect2.__class__.__name__ != "Rectangle":
+        if rect_2.__class__.__name__ != "Rectangle":
             raise TypeError("rect_2 must be a rectangle")
 
-        if rect1.area() >= rect2.area():
-            return rect1
+        if rect_1.area() >= rect_2.area():
+            return rect_1
         else:
-            return rect2
+            return rect_2
