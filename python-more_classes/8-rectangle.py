@@ -85,6 +85,9 @@ class Rectangle:
         Args:
             rect_1 (int): Rectangle 1
             rect_2 (int): Rectangle 2
+        Raises:
+            TypeError: If either of rect_1 or rect_2 is not
+            a Rectangle.
         """
         if rect_1.__class__.__name__ != "Rectangle":
             raise TypeError("rect_1 must be a Rectangle")
@@ -93,5 +96,4 @@ class Rectangle:
 
         if rect_1.area() >= rect_2.area():
             return rect_1
-        else:
-            return rect_2
+        return rect_2
