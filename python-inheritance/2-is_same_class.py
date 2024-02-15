@@ -4,7 +4,7 @@
 
 def is_same_class(obj, a_class):
     """
-    Checks if the obj is exactly an instance
+    Checks if the obj is EXACTLY an instance
     of the specified class (a_class).
 
     Args:
