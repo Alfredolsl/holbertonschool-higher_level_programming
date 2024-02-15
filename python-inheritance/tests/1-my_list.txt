@@ -1,0 +1,81 @@
+MyList
+
+Subclass of list.
+
+Verify module docstring
+	>>> m = __import__("1-my_list").__doc__
+	>>> len(m) > 1
+	True
+
+Verify class docstring
+	>>> c = __import__("1-my_list").MyList.__doc__
+	>>> len(c) > 1
+	True
+
+Verify init docstring
+	>>> ini = __import__("1-my_list").MyList.__init__.__doc__
+	>>> len(ini) > 1
+	True
+
+Verify method docstring
+	>>> mtd = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> len(mtd) > 1
+	True
+
+Verify that MyList inherits from list
+	>>> MyList = __import__("1-my_list").MyList
+	>>> issubclass(MyList, list)
+	True
+
+
+Empty list test
+	>>> l = MyList()
+	>>> l.print_sorted()
+	[]
+
+List append function
+	>>> l.append(1)
+	>>> l.append(2)
+	>>> l.append(3)
+	>>> l.append(4)
+	>>> print(l)
+	[1, 2, 3, 4]
+
+List order function
+	>>> l = MyList()
+	>>> l.append(4)
+	>>> l.append(3)
+	>>> l.append(2)
+	>>> l.append(1)
+	>>> print(l)
+	[4, 3, 2, 1]
+	>>> l.print_sorted()
+	[1, 2, 3, 4]
+
+List order function with negative numbers
+	>>> l = MyList()
+	>>> l.append(4)
+	>>> l.append(3)
+	>>> l.append(2)
+	>>> l.append(1)
+	>>> l.append(-1)
+	>>> print(l)
+	[4, 3, 2, 1, -1]
+	>>> l.print_sorted()
+	[-1, 1, 2, 3, 4]
+
+All negative numbers
+	>>> l = MyList()
+	>>> l.append(-1)
+	>>> l.append(-2)
+	>>> l.append(-3)
+	>>> l.append(-4)
+	>>> print(l)
+	[-1, -2, -3, -4]
+	>>> l.print_sorted()
+	[-4, -3, -2, -1]
+
+Verify too many arguments handling
+	>>> l.print_sorted(98)
+	Traceback (most recent call last):
+	TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
