@@ -1,3 +1,44 @@
 Verify docstring module
+	>>> m = __import__("7-base_geometry").__doc__
+	>>> len(m) > 1
+	True
 
-	test
+Verify class docstring
+	>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+	>>> len(c) > 1
+	True
+
+Verify init docstring
+	>>> ini = __import__("7-base_geometry").BaseGeometry.__init__.__doc__
+	>>> len(ini) > 1
+	True
+
+Verify method docstring
+	>>> mtd = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+	>>> len(mtd) > 1
+	True
+
+Testing Base Gometry Module
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+Validate valid input
+	>>> bg.integer_validator("number", 98)
+
+Validate negative integer
+	>>> bg.integer_validator("number", -98)
+	Traceback (most recent call last):
+	ValueError: number must be greater than 0
+
+Validate zero
+	>>> bg.integer_validator("zero", 0)
+	Traceback (most recent call last):
+	ValueError: zero must be greater than 0
+
+Validate string input as value
+	>>> bg.integer_validator("zero", "zero")
+	Traceback (most recent call last):
+	TypeError: zero must be an integer
