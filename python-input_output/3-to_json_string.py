@@ -1,7 +1,6 @@
 #!/usr/bin/python3
+"""Defines a JSON representationfunction."""
 import json
-"""Defines a JSON representation
-function."""
 
 
 def to_json_string(my_obj):
