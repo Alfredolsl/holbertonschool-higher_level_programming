@@ -9,4 +9,4 @@ def class_to_json(obj):
     data structure for JSON serialization
     of an object.
     """
-    return json.dumps(obj.__dict__)
+    return obj.__dict__
