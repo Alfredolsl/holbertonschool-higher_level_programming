@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Defines a function."""
-import json
 
 
 def class_to_json(obj):
