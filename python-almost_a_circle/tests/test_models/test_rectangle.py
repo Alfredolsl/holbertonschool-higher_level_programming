@@ -95,3 +95,56 @@ class Test_Rectangle_Instantiation(unittest.TestCase):
         rect1.y = 10
         self.assertEqual(10, rect1.y)
 
+
+class Test_Rectangle_Width(unittest.TestCase):
+    """
+    Unittests for testing Rectangle width attribute
+    when initialized.
+    """
+
+    def test_None_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(None, 2)
+
+    def test_str_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("Hallo", 2)
+
+    def test_float_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(3.14, 2)
+
+    def test_complex_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(complex(1), 2)
+
+    def test_list_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle([1, 2], 2)
+
+    def test_dict_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle({"a": 1, "b": 2}, 2)
+
+    def test_bool_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(True, 2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
