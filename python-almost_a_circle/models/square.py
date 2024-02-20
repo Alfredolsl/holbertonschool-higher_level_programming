@@ -31,3 +31,6 @@ class Square(Rectangle):
                                                  self.x,
                                                  self.y,
                                                  self.height)
+
+    def update(self, *args, **kwargs):
+
