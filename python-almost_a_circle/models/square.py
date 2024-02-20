@@ -33,4 +33,18 @@ class Square(Rectangle):
                                                  self.height)
 
     def update(self, *args, **kwargs):
-
+        if len(args) != 0:
+            pos = 0
+            for arg in args:
+                if pos == 0:
+                    self.id = arg
+                elif pos == 1:
+                    self.size = arg
+                elif pos == 2:
+                    self.x = arg
+                elif pos == 3:
+                    self.y = arg
+                pos += 1
+        elif len(kwargs) != 0:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
