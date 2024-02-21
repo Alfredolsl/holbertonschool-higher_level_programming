@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defines a base model Base."""
+import json
 
 
 class Base:
@@ -25,3 +26,46 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        if len(list_dictionaries) == 0 or list_dictionaries is None:
+            return "[]"
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        filename = cls.__name__ + ".json" 
+        with open(filename, "w", encoding="utf-8") as f:
+            if len(list_objs) == 0 or list_objs is None:
+                f.write("[]")
+            else:
+                dict_objects = [o.to_dictionary() for o in list_objs]
+                print(Base.to_json_string(dict_objects))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if dictionary != {}:
+            if cls.__name__ == "Square":
+                dummy_instance = cls(1)
+            else:
+                dummy_instance = cls(1, 1)
+
+            dummy_instance.update(**dictionary)
+            return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                dict_objects = Base.from_json_string(f.read())
+                return [cls.create(**d) for d in dict_objects]
+        except IOError:
+            return []
