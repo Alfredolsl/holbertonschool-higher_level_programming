@@ -21,11 +21,11 @@ class Rectangle(Base):
             TypeError: If width, height, x or y is not int.
             ValueError: If width, height, x or y is < 0.
         """
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -105,6 +105,10 @@ class Rectangle(Base):
         elif len(kwargs) != 0:
             for k, v in kwargs.items():
                 setattr(self, k, v)
+
+    def to_dictionary(self):
+        return {"x": self.x, "y": self.y, "id": self.id,
+                "height": self.height, "width": self.width}
 
     def __str__(self):
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
