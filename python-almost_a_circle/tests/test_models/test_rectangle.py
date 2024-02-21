@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Brennan D Baraban <375@holbertonschool.com>
 """Defines a unittest for Class Rectangle."""
 import unittest
 from models.base import Base
