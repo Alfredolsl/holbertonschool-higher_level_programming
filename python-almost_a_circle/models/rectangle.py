@@ -29,20 +29,20 @@ class Rectangle(Base):
 
     @property
     def width(self):
-    """Set/Get value of width."""
+        """Set/Get value of width."""
         return self.__width
 
     @width.setter
-    """Sets proper value for width.
-
-    Args:
-        value (int): Value to set to width.
-
-    Raises:
-        TypeError: Width must be integer.
-        ValueError: Width must be > 0.
-    """
     def width(self, value):
+        """Sets proper value for width.
+
+        Args:
+            value (int): Value to set to width.
+
+        Raises:
+            TypeError: Width must be integer.
+            ValueError: Width must be > 0.
+        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -51,19 +51,20 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Set/Get value of height."""
         return self.__height
 
     @height.setter
-    """Sets proper value for height.
-
-    Args:
-        value (int): Value to set to height.
-
-    Raises:
-        TypeError: Height must be integer.
-        ValueError: Height must be > 0.
-    """
     def height(self, value):
+        """Sets proper value for height.
+
+        Args:
+            value (int): Value to set to height.
+
+        Raises:
+            TypeError: Height must be integer.
+            ValueError: Height must be > 0.
+        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -71,21 +72,21 @@ class Rectangle(Base):
         self.__height = value
 
     @property
-    """Sets/Get value of x."""
     def x(self):
+        """Sets/Get value of x."""
         return self.__x
 
     @x.setter
-    """Sets proper value for x.
-
-    Args:
-        value (int): Value to set to x.
-
-    Raises:
-        TypeError: x must be integer.
-        ValueError: x must be > 0.
-    """
     def x(self, value):
+        """Sets proper value for x.
+
+        Args:
+            value (int): Value to set to x.
+
+        Raises:
+            TypeError: x must be integer.
+            ValueError: x must be > 0.
+        """
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -93,21 +94,21 @@ class Rectangle(Base):
         self.__x = value
 
     @property
-    """Sets/Get value of y."""
     def y(self):
+        """Sets/Get value of y."""
         return self.__y
 
     @y.setter
-    """Sets proper value for y.
-
-    Args:
-        value (int): Value to set to y.
-
-    Raises:
-        TypeError: y must be integer.
-        ValueError: y must be > 0.
-    """
     def y(self, value):
+        """Sets proper value for y.
+
+        Args:
+            value (int): Value to set to y.
+
+        Raises:
+            TypeError: y must be integer.
+            ValueError: y must be > 0.
+        """
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
