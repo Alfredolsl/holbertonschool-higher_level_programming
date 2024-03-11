@@ -3,6 +3,7 @@
 
 import unittest
 import os
+import pep8
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -10,6 +11,13 @@ from models.square import Square
 
 class TestBase_instantiation(unittest.TestCase):
     """Unittests to test instantiation of Base Class."""
+
+    def test_pep8_base(self):
+        """Test for PEP8."""
+        syntax = pep8.StyleGuide(quit=True)
+        check = syntax.check_files(["models/base.py"])
+        self.assertEqual(check.total_errors, 0,
+                         "Found code style errors (and warnings).")
 
     def test_no_args(self):
         """Test if __nb_objects assigns id correctly.
