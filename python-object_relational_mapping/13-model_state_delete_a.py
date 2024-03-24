@@ -15,7 +15,7 @@ if __name__ == "__main__":
     session = Session()
 
     instances = session.query(State).filter(State.name.like("%a%"))
-    
+
     for instance in instances:
         session.delete(instance)
 
