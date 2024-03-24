@@ -4,7 +4,6 @@ from sys import argv
 from sqlalchemy import create_engine
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm.exc import NoResultFound
 
 if __name__ == "__main__":
     URL = "mysql+mysqldb://{}:{}\
