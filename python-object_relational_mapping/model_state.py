@@ -7,6 +7,7 @@ mymetadata = MetaData()
 # Metadata parameter collects table objects. E.g., to issue CREATE statements.
 Base = declarative_base(metadata=mymetadata)
 
+
 class State(Base):
     """
     Class with id and name attributes for each state
