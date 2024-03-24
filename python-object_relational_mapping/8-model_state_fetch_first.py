@@ -15,8 +15,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    try:
-        instance = session.query(State).first()
-        print(instance.id, instance.name, sep=": ")
-    except NoResultFound:
+    instance = session.query(State).first()
+
+    if instance is None:
         print("Nothing")
+    else:
+        print(instance.id, instance.name, sep=": ")
